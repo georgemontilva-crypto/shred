@@ -77,12 +77,21 @@
 }
 .nav__sheet {
   position: fixed;
-  inset: var(--nav-h) 0 0;
+  z-index: 99;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* dvh follows the phone's address bar as it shows and hides */
+  height: calc(100vh - var(--nav-h));
+  height: calc(100dvh - var(--nav-h));
   background: #000;
-  padding: 28px var(--gutter) 40px;
+  padding: 28px var(--gutter) max(40px, env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 .nav__sheet[hidden] {
   display: none;
