@@ -1,0 +1,342 @@
+{
+"aluminum/small-rasta": [
+1128,
+1558
+],
+"aluminum/small-green": [
+888,
+1227
+],
+"aluminum/small-purple": [
+855,
+1185
+],
+"aluminum/small-black": [
+873,
+1185
+],
+"aluminum/small-silver": [
+690,
+945
+],
+"aluminum/small-pink": [
+663,
+963
+],
+"aluminum/small-red": [
+669,
+945
+],
+"aluminum/small-blue": [
+681,
+963
+],
+"aluminum/small-gold": [
+663,
+963
+],
+"aluminum/medium-purple": [
+1072,
+1570
+],
+"aluminum/medium-green": [
+846,
+1224
+],
+"aluminum/medium-rasta": [
+813,
+1188
+],
+"aluminum/medium-black": [
+822,
+1188
+],
+"aluminum/medium-pink": [
+654,
+945
+],
+"aluminum/medium-silver": [
+690,
+945
+],
+"aluminum/medium-blue": [
+669,
+945
+],
+"aluminum/medium-red": [
+669,
+945
+],
+"aluminum/medium-gold": [
+654,
+945
+],
+"aluminum/large-red": [
+1069,
+1600
+],
+"aluminum/large-green": [
+843,
+1269
+],
+"aluminum/large-purple": [
+813,
+1221
+],
+"aluminum/large-black": [
+819,
+1233
+],
+"aluminum/large-silver": [
+717,
+1080
+],
+"aluminum/large-pink": [
+714,
+1068
+],
+"aluminum/large-rasta": [
+717,
+1074
+],
+"aluminum/large-blue": [
+711,
+1074
+],
+"aluminum/large-gold": [
+741,
+1074
+],
+"aluminum/xl-black": [
+982,
+1478
+],
+"aluminum/xl-purple": [
+801,
+1200
+],
+"aluminum/xl-green": [
+798,
+1200
+],
+"aluminum/xl-red": [
+801,
+1200
+],
+"aluminum/xl-pink": [
+903,
+1353
+],
+"aluminum/xl-rasta": [
+906,
+1359
+],
+"aluminum/xl-blue": [
+900,
+1362
+],
+"aluminum/xl-gold": [
+936,
+1359
+],
+"hemp/2pc-regular": [
+1210,
+1044
+],
+"hemp/2pc-pastel": [
+1298,
+1262
+],
+"hemp/2pc-box-regular": [
+822,
+1180
+],
+"hemp/2pc-box-pastel": [
+822,
+1188
+],
+"hemp/4pc-regular": [
+1322,
+1216
+],
+"hemp/4pc-pastel": [
+1348,
+1276
+],
+"hemp/4pc-box-regular": [
+806,
+1200
+],
+"hemp/4pc-box-pastel": [
+815,
+1225
+],
+"hemp/magnetic-regular": [
+1002,
+1364
+],
+"hemp/magnetic-pastel": [
+1188,
+1186
+],
+"hemp/magnetic-box-regular": [
+940,
+1146
+],
+"hemp/magnetic-box-pastel": [
+922,
+1152
+],
+"acrylic/2pc-24-box": [
+1354,
+1266
+],
+"acrylic/2pc-24-colors": [
+1066,
+1464
+],
+"acrylic/2pc-24-hero": [
+1254,
+890
+],
+"acrylic/2pc-25-box": [
+1354,
+1172
+],
+"acrylic/2pc-25-colors": [
+960,
+1336
+],
+"acrylic/2pc-25-hero": [
+1521,
+802
+],
+"acrylic/2pc-30-box": [
+1354,
+1050
+],
+"acrylic/2pc-30-colors": [
+1046,
+1454
+],
+"acrylic/2pc-30-hero": [
+1136,
+572
+],
+"acrylic/4pc-20-box": [
+1354,
+1160
+],
+"acrylic/4pc-20-colors": [
+1034,
+1356
+],
+"acrylic/4pc-20-hero": [
+1234,
+1048
+],
+"acrylic/4pc-25-box": [
+1444,
+1176
+],
+"acrylic/4pc-25-colors": [
+1012,
+1326
+],
+"acrylic/4pc-25-hero": [
+1234,
+1048
+],
+"storage/vac-jar-hero": [
+514,
+1600
+],
+"storage/vac-jar-sizes": [
+1600,
+647
+],
+"storage/vac-jar-green": [
+393,
+954
+],
+"storage/vac-jar-purple": [
+399,
+951
+],
+"storage/vac-jar-blue": [
+396,
+954
+],
+"storage/vac-jar-white": [
+381,
+960
+],
+"storage/vac-jar-black": [
+381,
+960
+],
+"storage/vac-jar-red": [
+399,
+954
+],
+"storage/3in1-colors": [
+1600,
+420
+],
+"storage/grinder-jar-colors": [
+1600,
+535
+],
+"storage/3in1-hero": [
+402,
+1252
+],
+"storage/grinder-jar-hero": [
+746,
+1212
+],
+"storage/3in1-pipe": [
+714,
+1263
+],
+"storage/3in1-one-hitter": [
+858,
+453
+],
+"storage/joint-storage": [
+1529,
+1388
+],
+"battery/go2-box": [
+1238,
+1152
+],
+"battery/moonlight-box": [
+1120,
+1308
+],
+"battery/go2-device": [
+370,
+1056
+],
+"battery/moonlight-space-black": [
+273,
+1600
+],
+"battery/moonlight-cosmic-crimson": [
+273,
+1600
+],
+"battery/moonlight-stardust-azure": [
+273,
+1600
+],
+"battery/moonlight-celestial-steel": [
+273,
+1600
+],
+"battery/moonlight-nebula-blush": [
+273,
+1600
+]
+}
