@@ -407,10 +407,30 @@
   margin: 0;
 }
 
+/* ---------- Light sections: a faint dot screen, as on the catalog pages ---------- */
+.dotted {
+  position: relative;
+  overflow: hidden;
+}
+.dotted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.11) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(ellipse 62% 78% at 50% 58%, #000 10%, transparent 72%);
+  mask-image: radial-gradient(ellipse 62% 78% at 50% 58%, #000 10%, transparent 72%);
+  pointer-events: none;
+}
+.dotted > * {
+  position: relative;
+}
+
 /* ---------- Size lineup ---------- */
 .lineup__scroller {
   overflow-x: auto;
   margin-top: clamp(36px, 6vw, 72px);
+  padding-block: 28px 8px;
   scrollbar-width: none;
 }
 .lineup__scroller::-webkit-scrollbar {
@@ -426,6 +446,16 @@
   min-width: 100%;
   padding-inline: var(--gutter);
 }
+/* Each grinder rises into place, smallest first, the first time the row is seen. */
+.lineup__row li {
+  opacity: 0;
+  translate: 0 44px;
+  transition: opacity 0.7s var(--ease) calc(var(--n) * 110ms), translate 1s var(--ease-out) calc(var(--n) * 110ms);
+}
+.lineup.is-in .lineup__row li {
+  opacity: 1;
+  translate: none;
+}
 .lineup__item {
   display: grid;
   justify-items: center;
@@ -433,18 +463,49 @@
   text-align: center;
 }
 .lineup__img {
+  position: relative;
   display: flex;
   align-items: flex-end;
   margin-bottom: clamp(12px, 2vw, 22px);
 }
+/* A wash of the grinder's own colour behind it, and its shadow on the floor. */
+.lineup__img::before {
+  content: "";
+  position: absolute;
+  inset: -12% -38%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--tone) 30%, transparent), transparent);
+  opacity: 0.75;
+  transition: opacity 0.5s var(--ease), scale 0.7s var(--ease-out);
+  pointer-events: none;
+}
+.lineup__img::after {
+  content: "";
+  position: absolute;
+  left: -6%;
+  right: 22%;
+  bottom: -5%;
+  height: 12%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.3), transparent);
+  transition: opacity 0.5s var(--ease), scale 0.6s var(--ease-out);
+  pointer-events: none;
+}
 .lineup__img img {
+  position: relative;
+  z-index: 1;
   height: calc(var(--in) * var(--k));
   width: auto;
-  filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.2));
-  transition: transform 0.5s var(--ease-out);
+  transition: transform 0.6s var(--ease-out);
 }
 .lineup__item:hover img {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+}
+.lineup__item:hover .lineup__img::before {
+  opacity: 1;
+  scale: 1.12;
+}
+.lineup__item:hover .lineup__img::after {
+  opacity: 0.6;
+  scale: 0.86;
 }
 .lineup__inches {
   font-family: var(--font-tall);
@@ -460,6 +521,198 @@
 .lineup__item .tag {
   margin-top: 6px;
   font-size: 0.6875rem;
+}
+
+/* ---------- Take a closer look (3D) ---------- */
+.look {
+  position: relative;
+  padding-block: clamp(56px, 8vw, 110px);
+  overflow: hidden;
+  transition: --tone 0.7s var(--ease);
+}
+.look__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+}
+.look__side .title {
+  margin-bottom: 0.9em;
+}
+.look__list {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+.pill {
+  max-width: 100%;
+  border-radius: 28px;
+  background: #1d1d1f;
+  transition: background 0.3s var(--ease);
+}
+.pill:not(.is-open):hover {
+  background: #2a2a2d;
+}
+.pill.is-open {
+  width: 100%;
+  background: #232326;
+}
+.pill__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 56px;
+  padding: 0 28px 0 15px;
+  border-radius: 28px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #f5f5f7;
+  text-align: left;
+}
+.pill__plus,
+.pill__dot {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+.pill__dot {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+.pill__plus {
+  position: relative;
+  box-shadow: inset 0 0 0 1.5px #f5f5f7;
+}
+.pill__plus::before,
+.pill__plus::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 11px;
+  height: 1.5px;
+  margin: -0.75px 0 0 -5.5px;
+  background: #f5f5f7;
+  transition: rotate 0.35s var(--ease-out), opacity 0.2s var(--ease);
+}
+.pill__plus::after {
+  rotate: 90deg;
+}
+.pill.is-open .pill__plus::after {
+  rotate: 0deg;
+  opacity: 0;
+}
+.pill__body {
+  display: grid;
+  gap: 14px;
+  padding: 0 26px 24px 55px;
+  color: var(--haze);
+  animation: pill-in 0.45s var(--ease-out);
+}
+@keyframes pill-in {
+  from {
+    opacity: 0;
+    translate: 0 -6px;
+  }
+}
+.pill__body .swatches {
+  flex-wrap: nowrap;
+  gap: clamp(5px, 1.6vw, 8px);
+}
+.pill__body .swatch {
+  width: clamp(24px, 6.4vw, 30px);
+  height: clamp(24px, 6.4vw, 30px);
+}
+.pill__note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 24px;
+  font-size: 0.9375rem;
+  color: #f5f5f7;
+}
+.look__sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.look__size {
+  min-width: 58px;
+  padding: 8px 14px 9px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  color: #f5f5f7;
+  font-weight: 500;
+  transition: box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+}
+.look__size:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.look__size[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 2px #fff;
+}
+.look__stage {
+  position: relative;
+  height: min(78vh, 740px);
+  height: min(78svh, 740px);
+  min-height: 420px;
+}
+.look__light {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(120%, 900px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--tone) 34%, transparent), color-mix(in srgb, var(--tone) 10%, transparent) 50%, transparent);
+  pointer-events: none;
+}
+.look__canvas {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: pan-y; /* a sideways swipe turns the model, an up/down swipe still scrolls the page */
+  opacity: 0;
+  transition: opacity 0.8s var(--ease);
+}
+.look__stage.is-ready .look__canvas {
+  opacity: 1;
+}
+.look__canvas.is-dragging {
+  cursor: grabbing;
+}
+.look__fallback {
+  position: absolute;
+  inset: 8%;
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+}
+.look__hint {
+  position: absolute;
+  inset: auto 0 6px;
+  text-align: center;
+  font-size: var(--step--1);
+  color: var(--haze);
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .look__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .look__stage {
+    order: -1;
+    height: 56vh;
+    height: 56svh;
+    min-height: 340px;
+  }
+  .look__side .title {
+    text-align: center;
+  }
 }
 
 /* ---------- Catalog tiles ---------- */

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import HeroStage from "../components/HeroStage";
 import SizeLineup from "../components/SizeLineup";
+import CloserLook from "../components/CloserLook";
 import VideoRail from "../components/VideoRail";
 import Picture from "../components/Picture";
 import { bySlug, img, products } from "../data/products";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <HeroStage />
       <SizeLineup />
+      <CloserLook />
 
       <section className="band">
         <div className="wrap">
@@ -100,7 +102,7 @@ export default function Home() {
 
       <VideoRail />
 
-      <section className="band on-paper">
+      <section className="band on-paper dotted">
         <div className="wrap center stack">
           <h2 className="title">Have a question about a product?</h2>
           <p className="lede">Ask about sizes, colors or stocking Shred Master in your store. We reply by email.</p>

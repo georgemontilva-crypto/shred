@@ -42,6 +42,8 @@ Sin estas variables el sitio funciona igual, pero el formulario muestra un aviso
 | Correo, teléfono, redes, edad mínima | `src/data/site.ts` |
 | Textos de About us | `src/pages/About.tsx` |
 | Textos de las 4 piezas en el hero del Home | `src/components/HeroStage.tsx` |
+| Sección 3D "Take a closer look" (textos, colores, tamaños) | `src/components/CloserLook.tsx` |
+| Modelo 3D del grinder (formas, materiales, cámara) | `src/three/grinder.ts` |
 | Capas animadas del grinder del hero | `public/img/aluminum/pieces/` (se regeneran con `tools/cut-pieces`) |
 
 ### Agregar un video
