@@ -88,12 +88,6 @@ export default function About() {
                 one that looks like yours.
               </dd>
             </div>
-            <div>
-              <dt>Reports you can read</dt>
-              <dd>
-                Lab reports are posted on this site by product. <Link className="link" to="/lab-reports">View lab reports</Link>
-              </dd>
-            </div>
           </dl>
         </div>
       </section>

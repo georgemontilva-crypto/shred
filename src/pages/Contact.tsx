@@ -7,7 +7,6 @@ import { usePage } from "../lib/hooks";
 const topics = [
   { id: "product", label: "A product question" },
   { id: "wholesale", label: "Wholesale and distribution" },
-  { id: "lab", label: "Lab reports" },
   { id: "other", label: "Something else" },
 ];
 
@@ -21,7 +20,7 @@ const errors: Record<string, string> = {
 };
 
 export default function Contact() {
-  usePage("Contact us", "Send Shred Master a message about a product, a lab report or stocking the line in your store.");
+  usePage("Contact us", "Send Shred Master a message about a product or stocking the line in your store.");
   const [params] = useSearchParams();
   const product = bySlug(params.get("product") ?? "");
   const startTopic = product ? "product" : topics.find((t) => t.id === params.get("topic"))?.id ?? "product";
@@ -60,7 +59,7 @@ export default function Contact() {
         <div className="wrap stack">
           <h1 className="display">Contact us</h1>
           <p className="lede">
-            Ask about a product, request a lab report, or tell us about your store. We reply by email.
+            Ask about a product or tell us about your store. We reply by email.
           </p>
         </div>
       </section>

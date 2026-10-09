@@ -309,7 +309,7 @@
   }
 }
 
-/* Specs, gallery, reports */
+/* Specs and gallery */
 .specs__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
@@ -374,36 +374,5 @@
   .gallery__item img {
     height: auto;
     max-height: 340px;
-  }
-}
-.reports {
-  display: grid;
-}
-.report {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  align-items: baseline;
-  gap: 8px 24px;
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
-}
-.reports li:last-child .report {
-  border-bottom: 1px solid var(--line);
-}
-.report__title {
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-.report__actions {
-  display: flex;
-  gap: 20px;
-}
-a.report:hover .link {
-  text-decoration: underline;
-}
-@media (max-width: 560px) {
-  .report {
-    grid-template-columns: 1fr;
-    gap: 4px;
   }
 }

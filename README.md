@@ -1,6 +1,6 @@
 # Shred Master
 
-Web informativa de la marca: Home, Products, Lab reports, About us y Contact us.
+Web informativa de la marca: Home, Products, About us y Contact us.
 Sin base de datos y sin panel admin: todo el contenido vive en archivos del repo.
 
 **Stack:** React + Vite + TypeScript, servido por un servidor Express mínimo (`server/index.js`) que también envía el formulario de contacto por Resend.
@@ -38,19 +38,10 @@ Sin estas variables el sitio funciona igual, pero el formulario muestra un aviso
 | --- | --- |
 | Productos, textos, colores, specs | `src/data/products.ts` |
 | Fotos de producto | `public/img/…` (reemplazar el archivo con el mismo nombre) |
-| Reportes de laboratorio | soltar el PDF en `src/lab-reports/` (ver el README de esa carpeta) |
 | Videos verticales | `public/videos/` + una línea en `src/data/videos.ts` |
 | Correo, teléfono, redes, edad mínima | `src/data/site.ts` |
 | Textos de About us | `src/pages/About.tsx` |
 | Piezas del grinder en el hero del Home | `src/components/HeroStage.tsx` |
-
-### Agregar un reporte de laboratorio
-
-```
-src/lab-reports/storage-vac-jar/2026-09-30_heavy-metals-test.pdf
-```
-
-Carpeta = producto (slug), nombre del archivo = título y fecha. Hacer commit y push; aparece solo en la página Lab reports y en la página del producto.
 
 ### Agregar un video
 

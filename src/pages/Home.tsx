@@ -4,11 +4,10 @@ import SizeLineup from "../components/SizeLineup";
 import VideoRail from "../components/VideoRail";
 import Picture from "../components/Picture";
 import { bySlug, img, products } from "../data/products";
-import { labReports } from "../lib/labReports";
 import { usePage } from "../lib/hooks";
 
 export default function Home() {
-  usePage("Shred Master", "Shred Master grinders, storage jars and batteries. Browse the 2026 catalog and read the lab reports.");
+  usePage("Shred Master", "Shred Master grinders, storage jars and batteries. Browse the 2026 catalog.");
   const moonlight = bySlug("moonlight-battery")!;
 
   return (
@@ -103,18 +102,14 @@ export default function Home() {
 
       <section className="band on-paper">
         <div className="wrap center stack">
-          <h2 className="title">Read the lab reports.</h2>
-          <p className="lede">
-            {labReports.length
-              ? "Test reports are posted by product, and every one is a PDF you can open or download."
-              : "Test reports will be posted here by product as they are released."}
-          </p>
+          <h2 className="title">Have a question about a product?</h2>
+          <p className="lede">Ask about sizes, colors or stocking Shred Master in your store. We reply by email.</p>
           <div className="actions">
-            <Link className="btn" to="/lab-reports">
-              View lab reports
+            <Link className="btn" to="/contact">
+              Contact us
             </Link>
-            <Link className="link" to="/contact">
-              Ask us a question
+            <Link className="link" to="/products">
+              Browse all products
             </Link>
           </div>
         </div>

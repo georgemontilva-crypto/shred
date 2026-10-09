@@ -29,9 +29,6 @@ export default function Footer() {
                 <Link to="/about">About us</Link>
               </li>
               <li>
-                <Link to="/lab-reports">Lab reports</Link>
-              </li>
-              <li>
                 <Link to="/contact">Contact us</Link>
               </li>
               {site.instagram && (

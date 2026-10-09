@@ -1,29 +1,3 @@
-/* ---------- Lab reports page ---------- */
-.reports-page {
-  padding-bottom: clamp(72px, 10vw, 140px);
-}
-.reports-group {
-  padding-top: clamp(32px, 5vw, 56px);
-}
-.reports-group .heading {
-  margin-bottom: 14px;
-}
-.reports-group .heading a:hover {
-  color: var(--blue);
-}
-.empty {
-  display: grid;
-  gap: 12px;
-  justify-items: start;
-  max-width: 40rem;
-  padding: clamp(28px, 5vw, 56px);
-  border-radius: var(--radius);
-  background: var(--paper);
-}
-.empty .actions {
-  margin-top: 12px;
-}
-
 /* ---------- About ---------- */
 .about__title {
   margin-bottom: clamp(28px, 4vw, 52px);

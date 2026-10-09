@@ -5,7 +5,6 @@ import Name from "../components/Name";
 import ProductCard from "../components/ProductCard";
 import NotFound from "./NotFound";
 import { bySlug, families, familyOf, fullName, inSeries, products, type Product } from "../data/products";
-import { formatDate, reportsFor } from "../lib/labReports";
 import { swatchBg } from "../lib/swatch";
 import { usePage } from "../lib/hooks";
 
@@ -25,7 +24,6 @@ function Detail({ product }: { product: Product }) {
   const tone = variant?.tone ?? product.tone ?? "#9aa3b0";
   const family = familyOf(product.family);
   const siblings = inSeries(product.series);
-  const reports = reportsFor(product.slug);
   const sameLine = products.filter(
     (p) => p.family === product.family && p.slug !== product.slug && (!product.series || p.series !== product.series),
   );
@@ -130,9 +128,9 @@ function Detail({ product }: { product: Product }) {
               <Link className="btn" to={`/contact?product=${product.slug}`}>
                 Ask about this product
               </Link>
-              <a className="link" href="#lab-reports">
-                Lab reports
-              </a>
+              <Link className="link" to={`/products?family=${family.id}`}>
+                All {family.name.toLowerCase()}
+              </Link>
             </div>
           </div>
         </div>
@@ -168,36 +166,8 @@ function Detail({ product }: { product: Product }) {
         </section>
       )}
 
-      <section id="lab-reports" className={`band${product.gallery ? " on-paper" : ""}`}>
-        <div className="wrap specs__grid">
-          <h2 className="title">Lab reports</h2>
-          {reports.length ? (
-            <ul className="reports">
-              {reports.map((r) => (
-                <li key={r.url}>
-                  <a href={r.url} target="_blank" rel="noreferrer" className="report">
-                    <span className="report__title">{r.title}</span>
-                    {r.date && <span className="small muted">{formatDate(r.date)}</span>}
-                    <span className="link">Open PDF</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="stack">
-              <p className="lede">No reports are posted for this product yet.</p>
-              <p>
-                <Link className="link" to="/lab-reports">
-                  See all lab reports
-                </Link>
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
-
       {related.length > 0 && (
-        <section className={`band${product.gallery ? "" : " on-paper"}`}>
+        <section className={`band${product.gallery ? " on-paper" : ""}`}>
           <div className="wrap">
             <h2 className="title">{relatedTitle}</h2>
             <div className="cards cards--related">
