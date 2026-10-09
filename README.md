@@ -41,7 +41,8 @@ Sin estas variables el sitio funciona igual, pero el formulario muestra un aviso
 | Videos verticales | `public/videos/` + una línea en `src/data/videos.ts` |
 | Correo, teléfono, redes, edad mínima | `src/data/site.ts` |
 | Textos de About us | `src/pages/About.tsx` |
-| Piezas del grinder en el hero del Home | `src/components/HeroStage.tsx` |
+| Textos de las 4 piezas en el hero del Home | `src/components/HeroStage.tsx` |
+| Capas animadas del grinder del hero | `public/img/aluminum/pieces/` (se regeneran con `tools/cut-pieces`) |
 
 ### Agregar un video
 

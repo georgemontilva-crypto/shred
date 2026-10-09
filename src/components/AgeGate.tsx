@@ -1,19 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import { site } from "../data/site";
-
-const KEY = "sm-age-ok";
-
-function alreadyConfirmed(): boolean {
-  try {
-    return localStorage.getItem(KEY) === "1";
-  } catch {
-    return false;
-  }
-}
+import { ageConfirmed, confirmAge } from "../lib/age";
 
 export default function AgeGate() {
-  const [state, setState] = useState<"hidden" | "ask" | "denied">(() => (alreadyConfirmed() ? "hidden" : "ask"));
+  const [state, setState] = useState<"hidden" | "ask" | "denied">(() => (ageConfirmed() ? "hidden" : "ask"));
   const yes = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -28,11 +19,7 @@ export default function AgeGate() {
   if (state === "hidden") return null;
 
   const confirm = () => {
-    try {
-      localStorage.setItem(KEY, "1");
-    } catch {
-      /* private mode: the gate simply shows again next visit */
-    }
+    confirmAge();
     setState("hidden");
   };
 
